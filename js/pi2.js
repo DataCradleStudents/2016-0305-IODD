@@ -166,7 +166,7 @@ var tagtext = rectg.selectAll("text")
 function cycleRight(type){
   svg.select(type)
   .transition()
-  .duration(800)
+  .duration(1000)
   .ease("elastic", 1, 0.8)
   .attr({
     "x": 0,
@@ -178,7 +178,7 @@ function cycleRight(type){
   if(type=="#chart1") {
     svg.select("#chart2")
     .transition()
-    .duration(800)
+    .duration(1000)
     .ease("elastic", 1, 0.8)
     .attr({
       "x": -50,
@@ -189,7 +189,7 @@ function cycleRight(type){
 
     svg.select("#chart3")
     .transition()
-    .duration(800)
+    .duration(1000)
     .ease("elastic", 1, 0.8)
     .attr({
       "x": 50,
@@ -203,7 +203,7 @@ function cycleRight(type){
   }else if(type=="#chart2") {
     svg.select("#chart3")
     .transition()
-    .duration(800)
+    .duration(1000)
     .ease("elastic", 1, 0.8)
     .attr({
       "x": -50,
@@ -214,7 +214,7 @@ function cycleRight(type){
 
     svg.select("#chart1")
     .transition()
-    .duration(800)
+    .duration(1000)
     .ease("elastic", 1, 0.8)
     .attr({
       "x": 50,
@@ -228,7 +228,7 @@ function cycleRight(type){
   } else {
     svg.select("#chart1")
     .transition()
-    .duration(800)
+    .duration(1000)
     .ease("elastic", 1, 0.8)
     .attr({
       "x": -50,
@@ -239,7 +239,7 @@ function cycleRight(type){
 
     svg.select("#chart2")
     .transition()
-    .duration(800)
+    .duration(1000)
     .ease("elastic", 1, 0.8)
     .attr({
       "x": 50,
@@ -257,7 +257,7 @@ function cycleRight(type){
 function cycleLeft(type){
   svg.select(type)
   .transition()
-  .duration(800)
+  .duration(1000)
   .ease("elastic", 1, 0.8)
   .attr({
     "x": 0,
@@ -269,7 +269,7 @@ function cycleLeft(type){
   if(type=="#chart1") {
     svg.select("#chart2")
     .transition()
-    .duration(800)
+    .duration(1000)
     .ease("elastic", 1, 0.8)
     .attr({
       "x": -50,
@@ -280,7 +280,7 @@ function cycleLeft(type){
 
     svg.select("#chart3")
     .transition()
-    .duration(800)
+    .duration(1000)
     .ease("elastic", 1, 0.8)
     .attr({
       "x": 50,
@@ -294,7 +294,7 @@ function cycleLeft(type){
   }else if(type=="#chart2") {
     svg.select("#chart3")
     .transition()
-    .duration(800)
+    .duration(1000)
     .ease("elastic", 1, 0.8)
     .attr({
       "x": -50,
@@ -305,7 +305,7 @@ function cycleLeft(type){
 
     svg.select("#chart1")
     .transition()
-    .duration(800)
+    .duration(1000)
     .ease("elastic", 1, 0.8)
     .attr({
       "x": 50,
@@ -319,7 +319,7 @@ function cycleLeft(type){
   } else {
     svg.select("#chart1")
     .transition()
-    .duration(800)
+    .duration(1000)
     .ease("elastic", 1, 0.8)
     .attr({
       "x": -50,
@@ -330,7 +330,7 @@ function cycleLeft(type){
 
     svg.select("#chart2")
     .transition()
-    .duration(800)
+    .duration(1000)
     .ease("elastic", 1, 0.8)
     .attr({
       "x": 50,
@@ -349,7 +349,7 @@ function arcAnime(newdata, flag) {
   svg.selectAll("path")
   .data(pie(newdata))
   .transition()
-  .duration(800)
+  .duration(1000)
   .ease("bounce")
   .attrTween("d", function(d) {
     var interpolate = d3.interpolate(this._current, d);
@@ -372,7 +372,7 @@ function arcAnime(newdata, flag) {
     return a_scale(d.data) + "%";
   })
   .transition()
-  .duration(800)
+  .duration(1000)
   .ease("bounce")
   .attrTween("transform", function(d) {
     var interpolate = d3.interpolate(arc.centroid(this._current), arc.centroid(d));
