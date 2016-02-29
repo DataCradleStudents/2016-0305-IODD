@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>IODD slide maste</title>
+
+	<meta name="description" content="A slide for open data day 2016">
+	<meta name="author" content="Ishikawa Hiromu">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/beige.css" id="theme">
+
+	<!-- Code syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+	var link = document.createElement( 'link' );
+	link.rel = 'stylesheet';
+	link.type = 'text/css';
+	link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+	document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+	<div class="reveal">
+
+		<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="slides">
+			<section data-markdown
+			data-separator="\n---\n$"
+			data-separator-vertical="\n>>>\n">
+			<script type="text/template">
+				#マステ(仮)
+				---
+				データ分析チャレンジ
+
+				---
+
+				###メンバー紹介
+
+				>>>
+				###石川
+				- 出身
+				- 岡山県真庭市
+
+				>>>
+				###小原
+				- 出身
+				- 岡山県総社市
+				>>>
+				###木下
+				- 出身
+				- 山口県
+				>>>
+				###開
+				- 出身
+				- 熊本県
+
+				---
+
+				###美観地区ってどう思われている？
+
+			</script>
+		</section>
+		<section>
+			<section>
+				<h3>Twitterで「美観地区」を検索</h3>
+				<p class="fragment">↓<br/><br/>word cloudを用いて可視化</p>
+
+			</section>
+			<section>
+				<img id="wc" src="kurashiki2.png"></img>
+			</section>
+			<section>
+				<h2>マステって何！？</h2>
+				「聖地」と一緒にツイートされている
+			</section>
+		</section>
+		<section data-markdown
+		data-separator="\n---\n$"
+		data-separator-vertical="\n>>>\n">
+		<script type="text/template">
+			##マステ
+			- マステ＝マスキングテープ
+			- 柄付きのマスキングテープは倉敷発祥
+
+			---
+
+			###美観地区はマステの聖地だった！
+
+
+		</script>
+	</section>
+	<section>
+		<h3>しかし自分たちは知らなかった</h3>
+		<p class="fragment">→マステと倉敷の関係が認知されていない？</p>
+	</section>
+	<section>
+		<section>
+			<h3>google trendによる検索数分析</h3>
+		</section>
+		<section>
+			<div>
+			<script type="text/javascript" src="//www.google.co.jp/trends/embed.js?hl=ja&q=%E3%83%9E%E3%82%B9%E3%83%86,+%E7%BE%8E%E8%A6%B3%E5%9C%B0%E5%8C%BA&cmpt=q&tz=Etc/GMT-9&tz=Etc/GMT-9&content=1&cid=TIMESERIES_GRAPH_0&export=5&w=1000&h=300"></script>
+		</div>
+		<div>
+			<p class="fragment">意外と美観地区はマステ人気に乗れている！</p>
+			<p class="fragment">知らなかったのは自分たちだけなのか？</p>
+			<p class="fragment">ということで...</p>
+		</div>
+		</section>
+	</section>
+	<section>
+		<section>
+			<h3>身近な人へのアンケート</h3>
+		</section>
+		<section>
+			<h3>マステの発祥地を知っていますか？</h3>
+			<div id="pi"></div>
+		</section>
+	</section>
+	<section data-markdown
+	data-separator="\n---\n$"
+	data-separator-vertical="\n>>>\n">
+		<script type="text/template">
+		###知らなかったのは男性がほとんど！！
+		- 使用頻度が低い <!-- .element: class="fragment" data-fragment-index="1" -->
+		- 使わない人へのPRが弱い <!-- .element: class="fragment" data-fragment-index="2" -->
+
+		>>>
+
+		###あまり使わない男性にもPR
+		- 男性向け商品の開発 <!-- .element: class="fragment" data-fragment-index="1" -->
+		- 実用的な使用法の提案 <!-- .element: class="fragment" data-fragment-index="2" -->
+		---
+
+		##マステを倉敷の鉄板土産へ！
+		</script>
+	</section>
+</div>
+
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+<script src="js/d3.min.js"></script>
+<script src="js/d3.layout.cloud.js"></script>
+<script src="js/pi2.js"></script>
+<script>
+
+// Full list of configuration options available at:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+	controls: true,
+	progress: true,
+	history: true,
+	center: true,
+
+	transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+	// Optional reveal.js plugins
+	dependencies: [
+		{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+		{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+		{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+		{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+		{ src: 'plugin/zoom-js/zoom.js', async: true },
+		{ src: 'plugin/notes/notes.js', async: true }
+	]
+});
+
+</script>
+<script>
+	d3.select("#wc")
+	.on("click", function(){
+		d3.select(this)
+		.attr("src", "kuracloud2.png");
+	});
+	/*.on("mouseover", function(d,i) {
+		d3.select(window).on("keydown", function(d, i) {
+			if(d3.event.keyCode == 13) {
+				d3.select("#wc").attr("src","kuracloud2.png");
+			}
+		})
+	})
+	.on("mouseout", function(d,i) {
+		d3.select(window).on("keydown",null);
+	});*/
+</script>
+</body>
+</html>

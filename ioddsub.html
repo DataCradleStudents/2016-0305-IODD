@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>IODD slide maste</title>
+
+	<meta name="description" content="A slide for open data day 2016">
+	<meta name="author" content="Ishikawa Hiromu">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/beige.css" id="theme">
+
+	<!-- Code syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+	var link = document.createElement( 'link' );
+	link.rel = 'stylesheet';
+	link.type = 'text/css';
+	link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+	document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+	<script src="js/d3.min.js"></script>
+	<script src="js/d3.layout.cloud.js"></script>
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+	<div class="reveal">
+
+		<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="slides">
+			<section data-markdown
+			data-separator="\n---\n$"
+			data-separator-vertical="\n>>>\n">
+			<script type="text/template">
+				#その他資料
+
+				---
+
+				##公式観光サイト
+				---
+				[特産物](http://www.kurashiki-tabi.jp/haya_tokusan/)
+				>>>
+				###マスキングテープがない！
+
+				ジーンズやキャンドルはあるのに・・・・
+
+				---
+
+				##Twitter
+				
+				>>>
+
+				###2/19までのツイートを収集
+				- マステ,発祥でヒットするツイート150件
+				- デニム,発祥でヒットするツイート150件
+				>>>
+				###初めて
+				<b><!-- --></b>
+
+				| マステ発祥 | デニム発祥 |
+				| :-------: |:--------:|
+				| 4件 | 0件 |
+
+				<b><!-- --></b>
+				####両方に1件ずつあった初めて訪れたのツイートをノーカウント
+				>>>
+				###らしい
+
+				| マステ発祥 | デニム発祥 |
+				| :-------: |:--------:|
+				| 21件 | 3件 |
+
+				>>>
+				###発祥の地
+
+				| マステ発祥 | デニム発祥 |
+				| :-------: |:--------:|
+				| 58件 | 97件 |
+
+				---
+
+				##現地調査
+				---
+				実際に売店へ行ってみた
+
+				>>>
+				![image](image/IMG_1573.jpg)
+				>>>
+				![image](image/IMG_1576.jpg)
+				>>>
+				![image](image/IMG_1585.jpg)
+				>>>
+				![image](image/IMG_1586.jpg)
+				>>>
+				![image](image/IMG_1587.jpg)
+
+				---
+
+				###売店での押しは強く
+				###専門店も充実していた！！
+			</script>
+	</section>
+</div>
+
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+
+// Full list of configuration options available at:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+	controls: true,
+	progress: true,
+	history: true,
+	center: true,
+
+	transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+	// Optional reveal.js plugins
+	dependencies: [
+		{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+		{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+		{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+		{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+		{ src: 'plugin/zoom-js/zoom.js', async: true },
+		{ src: 'plugin/notes/notes.js', async: true }
+	]
+});
+
+</script>
+
+</body>
+</html>
