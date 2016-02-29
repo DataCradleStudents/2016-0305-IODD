@@ -167,6 +167,7 @@ function cycleRight(type){
   svg.select(type)
   .transition()
   .duration(800)
+  .ease("elastic", 1, 0.8)
   .attr({
     "x": 0,
     "y": -30,
@@ -178,6 +179,7 @@ function cycleRight(type){
     svg.select("#chart2")
     .transition()
     .duration(800)
+    .ease("elastic", 1, 0.8)
     .attr({
       "x": -50,
       "y": 30,
@@ -188,6 +190,7 @@ function cycleRight(type){
     svg.select("#chart3")
     .transition()
     .duration(800)
+    .ease("elastic", 1, 0.8)
     .attr({
       "x": 50,
       "y": 30,
@@ -201,6 +204,7 @@ function cycleRight(type){
     svg.select("#chart3")
     .transition()
     .duration(800)
+    .ease("elastic", 1, 0.8)
     .attr({
       "x": -50,
       "y": 30,
@@ -211,6 +215,7 @@ function cycleRight(type){
     svg.select("#chart1")
     .transition()
     .duration(800)
+    .ease("elastic", 1, 0.8)
     .attr({
       "x": 50,
       "y": 30,
@@ -224,6 +229,7 @@ function cycleRight(type){
     svg.select("#chart1")
     .transition()
     .duration(800)
+    .ease("elastic", 1, 0.8)
     .attr({
       "x": -50,
       "y": 30,
@@ -234,6 +240,7 @@ function cycleRight(type){
     svg.select("#chart2")
     .transition()
     .duration(800)
+    .ease("elastic", 1, 0.8)
     .attr({
       "x": 50,
       "y": 30,
@@ -251,6 +258,7 @@ function cycleLeft(type){
   svg.select(type)
   .transition()
   .duration(800)
+  .ease("elastic", 1, 0.8)
   .attr({
     "x": 0,
     "y": -30,
@@ -262,6 +270,7 @@ function cycleLeft(type){
     svg.select("#chart2")
     .transition()
     .duration(800)
+    .ease("elastic", 1, 0.8)
     .attr({
       "x": -50,
       "y": 30,
@@ -272,6 +281,7 @@ function cycleLeft(type){
     svg.select("#chart3")
     .transition()
     .duration(800)
+    .ease("elastic", 1, 0.8)
     .attr({
       "x": 50,
       "y": 30,
@@ -285,6 +295,7 @@ function cycleLeft(type){
     svg.select("#chart3")
     .transition()
     .duration(800)
+    .ease("elastic", 1, 0.8)
     .attr({
       "x": -50,
       "y": 30,
@@ -295,6 +306,7 @@ function cycleLeft(type){
     svg.select("#chart1")
     .transition()
     .duration(800)
+    .ease("elastic", 1, 0.8)
     .attr({
       "x": 50,
       "y": 30,
@@ -308,6 +320,7 @@ function cycleLeft(type){
     svg.select("#chart1")
     .transition()
     .duration(800)
+    .ease("elastic", 1, 0.8)
     .attr({
       "x": -50,
       "y": 30,
@@ -318,6 +331,7 @@ function cycleLeft(type){
     svg.select("#chart2")
     .transition()
     .duration(800)
+    .ease("elastic", 1, 0.8)
     .attr({
       "x": 50,
       "y": 30,
@@ -336,6 +350,7 @@ function arcAnime(newdata, flag) {
   .data(pie(newdata))
   .transition()
   .duration(800)
+  .ease("bounce")
   .attrTween("d", function(d) {
     var interpolate = d3.interpolate(this._current, d);
     this._current = interpolate(0);
@@ -358,6 +373,7 @@ function arcAnime(newdata, flag) {
   })
   .transition()
   .duration(800)
+  .ease("bounce")
   .attrTween("transform", function(d) {
     var interpolate = d3.interpolate(arc.centroid(this._current), arc.centroid(d));
     this._current = d;
