@@ -1,7 +1,7 @@
 
-var chart1 = [1,12];
-var chart2 = [9,4];
-var chart3 = [10, 16];
+var chart1 = [3,14];
+var chart2 = [10,5];
+var chart3 = [13, 19];
 
 var text = [{"text":"男性", "p":1, "id":"chart1"}, {"text":"女性", "p":2, "id":"chart2"}, {"text":"全体", "p":0, "id":"chart3"}];
 
