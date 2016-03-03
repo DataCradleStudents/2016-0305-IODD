@@ -45,7 +45,9 @@
 			data-separator-vertical="\n>>>\n">
 			<script type="text/template">
 				#マステの認識度
-				---
+				<div>
+					<img src="image/blue.png"></img>
+				</div>
 				データ分析チャレンジ
 
 				---
@@ -79,7 +81,31 @@
 		<section>
 			<section>
 				<h3>Twitterで「美観地区」を検索</h3>
-				<p class="fragment">↓<br/><br/>word cloudを用いて可視化</p>
+				<p class="fragment">ツイートを収集して倉敷の今を知る</p>
+			</section>
+			<section>
+				<h3>ツイートを単語に分けてカウント</h3>
+				<p>例えば</p>
+				<p id=tweet class="fragment">「倉敷はジーンズで有名な町です。」</p>
+				<p class="fragment">↓　分解</p>
+				<p class="fragment">倉敷　ジーンズ　有名　町</p>
+			</section>
+			<section  data-markdown>
+				<script type="text/template" style="height=400">
+					|順位|単語      |カウント数|
+					|:--:|:---------|:--------:|
+					|1   |観光      | 87       |
+					|2   |旅        | 80       |
+					|3   |トロ      | 79       |
+					|4   |おすすめ  | 78       |
+					|5   |マステ    | 76       |
+					|6   |女子      | 75       |
+					|7   |聖地      | 75       |
+					|8   |東京      | 68       |
+					|9   |南京      | 66       |
+					|10  |ところ    | 58       |
+
+				</script>
 
 			</section>
 			<section>
