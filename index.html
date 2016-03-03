@@ -15,7 +15,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 	<link rel="stylesheet" href="css/reveal.css">
-	<link rel="stylesheet" href="css/theme/beige.css" id="theme">
+	<link rel="stylesheet" href="css/theme/beige2.css" id="theme">
 
 	<!-- Code syntax highlighting -->
 	<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -46,7 +46,7 @@
 			<script type="text/template">
 				#美観地区の旬
 				<div>
-					<img src="image/blue.png" style="width: 1000px"></img>
+					<img src="image/m_line.png" style="width: 1000px"></img>
 				</div>
 				###データ分析チャレンジ
 
@@ -76,7 +76,14 @@
 
 				---
 
+				###倉敷に関するデータで何か出来ないか？
+				<p class="fragment"><font color="gray">倉敷出身者がいない...</font></p>
+				<p class="fragment"><font color="gray">そもそも倉敷のことを誰も知らない...</font></p>
+
+				---
+
 				###美観地区ってどう思われている？
+
 
 			</script>
 		</section>
@@ -85,6 +92,9 @@
 				<h3>Twitterで「美観地区」を検索</h3>
 				<p class="fragment">ツイートを収集して倉敷の今を知る</p>
 				<p class="fragment">2016年2月8日～2月12日までの976件のツイートを収集</p>
+			</section>
+			<section>
+				<h3>ツイートに含まれる頻出単語の解析</h3>
 			</section>
 			<section>
 				<h3>ツイートを単語に分けてカウント</h3>
@@ -112,121 +122,137 @@
 
 			</section>
 			<section>
-				<img id="wc" src="image/kurashiki2.png" width="800",height="740"></img>
+				<h2>作成したデータの可視化</h2>
 			</section>
 			<section>
-				<h2>マステって何！？</h2>
-				「聖地」と一緒にツイートされている
+				<img id="wc" src="image/kurashiki2.png" width="800",height="740"></img>
 			</section>
+			<section data-markdown
+			data-separator="\n---\n$"
+			data-separator-vertical="\n>>>\n">
+			<script type="text/template">
+				###美観地区は何かの聖地？
+				→"聖地"の含まれるツイートを調べてみた <!-- .element: class="fragment" data-fragment-index="1" -->
+
+				> レトロな街並みにマステの聖地♪倉敷美観地区は女子旅におすすめ！
+
+				<!-- .element: class="fragment" data-fragment-index="1" -->
+
+				---
+
+				###美観地区はマステの聖地だった！
+
+				<h3 class="fragment zoom-in"><font color="red">マステ</font>って何！？</h3>
+			</script>
 		</section>
-		<section data-markdown
-		data-separator="\n---\n$"
-		data-separator-vertical="\n>>>\n">
-		<script type="text/template">
-			##マステ
-			- マステ＝マスキングテープ
-			- 柄付きのマスキングテープは倉敷発祥
+	</section>
+	<section data-markdown
+	data-separator="\n---\n$"
+	data-separator-vertical="\n>>>\n">
+	<script type="text/template">
+		##マステ
+		- マステ＝マスキングテープ
+		- 柄付きのマスキングテープは倉敷発祥
 
-			---
+		<img src="image/mas1.jpg" width="150" height="150" />
+		<img src="image/mas2.jpg" width="150" height="150" />
+		<img src="image/mas3.jpg" width="150" height="150" />
 
-			###美観地区はマステの聖地だった！
+	</script>
+</section>
+<section>
+	<h3>しかし自分たちは知らなかった</h3>
+	<p class="fragment">→マステと美観地区の関係が認知されていない？</p>
+</section>
+<!-- <section>
+<section>
+<h3>google trendによる人気度分析</h3>
+</section>
+<section>
+<div>
+<!-- <script type="text/javascript" src="//www.google.co.jp/trends/embed.js?hl=ja&q=%E3%83%9E%E3%82%B9%E3%83%86,+%E7%BE%8E%E8%A6%B3%E5%9C%B0%E5%8C%BA&cmpt=q&tz=Etc/GMT-9&tz=Etc/GMT-9&content=1&cid=TIMESERIES_GRAPH_0&export=5&w=1000&h=300"></script> -->
+<!-- <script type="text/javascript" src="//www.google.co.jp/trends/embed.js?hl=ja&q=%E3%83%9E%E3%82%B9%E3%83%86,+%E7%BE%8E%E8%A6%B3%E5%9C%B0%E5%8C%BA&date=1/2010+74m&cmpt=q&tz=Etc/GMT-9&tz=Etc/GMT-9&content=1&cid=TIMESERIES_GRAPH_0&export=5&w=800&h=330"></script>
+</div>
+<div>
+<p class="fragment">意外と美観地区はマステ人気に乗れている！</p>
+<p class="fragment">知らなかったのは自分たちだけなのか？</p>
+</div>
+</section>
+</section> -->
+<section data-markdown data-separator="\n---\n$" data-separator-vertical="\n>>>\n">
+	###Twitterで"らしい"のつぶやき
+	---
+	- 2/19までの"マステ,発祥"のつぶやき150件から
+	- 2/19までの"デニム,発祥"のつぶやき150件から
 
+	>>>
 
-		</script>
+	###つぶやきの数
+
+	| マステ発祥 | デニム発祥 |
+	| :-------: |:--------:|
+	| 21件 | 3件 |
+
+	>>>
+
+	マイナーなイメージ...？
+</section>
+<section>
+	<section>
+		<h3>身近な人へのアンケート</h3>
 	</section>
 	<section>
-		<h3>しかし自分たちは知らなかった</h3>
-		<p class="fragment">→マステと美観地区の関係が認知されていない？</p>
+		<h3>マステの発祥地を知っていますか？</h3>
+		<div id="pi"></div>
 	</section>
-	<section>
-		<section>
-			<h3>google trendによる人気度分析</h3>
-		</section>
-		<section>
-			<div>
-			<!-- <script type="text/javascript" src="//www.google.co.jp/trends/embed.js?hl=ja&q=%E3%83%9E%E3%82%B9%E3%83%86,+%E7%BE%8E%E8%A6%B3%E5%9C%B0%E5%8C%BA&cmpt=q&tz=Etc/GMT-9&tz=Etc/GMT-9&content=1&cid=TIMESERIES_GRAPH_0&export=5&w=1000&h=300"></script> -->
-			<script type="text/javascript" src="//www.google.co.jp/trends/embed.js?hl=ja&q=%E3%83%9E%E3%82%B9%E3%83%86,+%E7%BE%8E%E8%A6%B3%E5%9C%B0%E5%8C%BA&date=1/2010+74m&cmpt=q&tz=Etc/GMT-9&tz=Etc/GMT-9&content=1&cid=TIMESERIES_GRAPH_0&export=5&w=800&h=330"></script>
-		</div>
-		<div>
-			<p class="fragment">意外と美観地区はマステ人気に乗れている！</p>
-			<p class="fragment">知らなかったのは自分たちだけなのか？</p>
-		</div>
-</section>
 </section>
 <section data-markdown data-separator="\n---\n$" data-separator-vertical="\n>>>\n">
-###Twitterで"らしい"のつぶやき
----
-- 2/19までの"マステ,発祥"のつぶやき150件から
-- 2/19までの"デニム,発祥"のつぶやき150件から
+	<script type="text/template">
+		<image src="image/IMG_1576.jpg" />
 
->>>
+		>>>
 
-###つぶやきの数
+		<image src="image/IMG_1585.jpg" />
 
-| マステ発祥 | デニム発祥 |
-| :-------: |:--------:|
-| 21件 | 3件 |
+		>>>
 
->>>
+		<image src="image/IMG_1586.jpg" />
 
-マイナーなイメージ？...
-</section>
-<section>
-<section>
-<h3>身近な人へのアンケート</h3>
-</section>
-<section>
-<h3>マステの発祥地を知っていますか？</h3>
-<div id="pi"></div>
-</section>
-</section>
-<section data-markdown data-separator="\n---\n$" data-separator-vertical="\n>>>\n">
-<script type="text/template">
-<image src="image/IMG_1576.jpg" />
+		>>>
 
->>>
-
-<image src="image/IMG_1585.jpg" />
-
->>>
-
-<image src="image/IMG_1586.jpg" />
-
->>>
-
-<image src="image/IMG_1587.jpg" />
-</script>
+		<image src="image/IMG_1587.jpg" />
+	</script>
 </section>
 <section data-markdown
 data-separator="\n---\n$"
 data-separator-vertical="\n>>>\n">
 <script type="text/template">
-###知らなかったのは男性がほとんど！！
-- 使用頻度が低い <!-- .element: class="fragment" data-fragment-index="1" -->
-- 使わない人へのPRが弱い <!-- .element: class="fragment" data-fragment-index="2" -->
+	###知らなかったのは男性がほとんど！！
+	- 使用頻度が低い <!-- .element: class="fragment" data-fragment-index="1" -->
+	- 使わない人へのPRが弱い <!-- .element: class="fragment" data-fragment-index="2" -->
 
->>>
+	>>>
 
-###男性へのPR強化
-- 男性向け商品の開発 <!-- .element: class="fragment" data-fragment-index="1" -->
-- 実用的な使用法の提案 <!-- .element: class="fragment" data-fragment-index="2" -->
+	###男性へのPR強化
+	- 男性向け商品の開発 <!-- .element: class="fragment" data-fragment-index="1" -->
+	- 実用的な使用法の提案 <!-- .element: class="fragment" data-fragment-index="2" -->
 
->>>
+	>>>
 
-###公式サイトで取り上げる
-- [岡山](http://www.okayama-kanko.jp/dc/)
-- [倉敷](http://www.kurashiki-tabi.jp/haya_tokusan/)
+	###公式サイトで取り上げる
+	- [岡山](http://www.okayama-kanko.jp/dc/)
+	- [倉敷](http://www.kurashiki-tabi.jp/haya_tokusan/)
 
->>>
+	>>>
 
-##マステの聖地=美観地区
-##認知度アップ！？
+	##マステの聖地=美観地区
+	##認知度アップ！？
 
----
+	---
 
-		###ご清聴ありがとうございました。
-		</script>
-	</section>
+	###ご清聴ありがとうございました。
+</script>
+</section>
 </div>
 
 </div>
@@ -260,21 +286,21 @@ Reveal.initialize({
 
 </script>
 <script>
-	d3.select("#wc")
-	.on("click", function(){
-		d3.select(this)
-		.attr("src", "image/kuracloud2.png");
-	});
-	/*.on("mouseover", function(d,i) {
-		d3.select(window).on("keydown", function(d, i) {
-			if(d3.event.keyCode == 13) {
-				d3.select("#wc").attr("src","kuracloud2.png");
-			}
-		})
-	})
-	.on("mouseout", function(d,i) {
-		d3.select(window).on("keydown",null);
-	});*/
+d3.select("#wc")
+.on("click", function(){
+	d3.select(this)
+	.attr("src", "image/kuracloud2.png");
+});
+/*.on("mouseover", function(d,i) {
+d3.select(window).on("keydown", function(d, i) {
+if(d3.event.keyCode == 13) {
+d3.select("#wc").attr("src","kuracloud2.png");
+}
+})
+})
+.on("mouseout", function(d,i) {
+d3.select(window).on("keydown",null);
+});*/
 </script>
 </body>
 </html>
