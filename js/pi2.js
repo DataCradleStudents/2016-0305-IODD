@@ -1,7 +1,7 @@
 
-var chart1 = [3,14];
-var chart2 = [10,5];
-var chart3 = [13, 19];
+var chart1 = [3,15];
+var chart2 = [13,5];
+var chart3 = [16, 20];
 
 var text = [{"text":"男性", "p":1, "id":"chart1"}, {"text":"女性", "p":2, "id":"chart2"}, {"text":"全体", "p":0, "id":"chart3"}];
 
@@ -14,7 +14,7 @@ var height = 600;
 var radius = Math.min(width, height) / 2 - 10;
 
 var outerRadius = radius - 10;
-var innerRadius = radius - 200;
+var innerRadius = radius - 170;
 
 var color = d3.scale.linear()
 .domain([0,d3.map(chart1).size()-1])
@@ -76,6 +76,37 @@ var c_text = svg
 .attr("transform","translate(" + width/2 + "," + height/2 + ")")
 .style("cursor","pointer");
 
+var num = svg
+.append("g")
+.attr("class","num")
+.attr("transform","translate(" + width/2 + "," + height/2 + ")");
+
+num.append("text")
+.attr({
+  "id": "Yes",
+  "text-anchor": "middle",
+  "font-size": 25,
+  "y": 40
+})
+
+num.append("text")
+.attr({
+  "id": "No",
+  "text-anchor": "middle",
+  "font-size": 25,
+  "y": 65
+})
+
+num.append("text")
+.attr({
+  "id": "sum",
+  "text-anchor": "middle",
+  "font-size": 25,
+  "y": 90
+})
+
+
+
 c_text.selectAll("text")
 .data(text).enter()
 .append("text")
@@ -97,9 +128,9 @@ c_text.selectAll("text")
 })
 .attr("y", function(d) {
   if(d["p"] == 0){
-    return -30;
+    return -40;
   }
-  return 30;
+  return -5;
 })
 .attr("fill", function(d) {
   if(d["p"] == 0){
@@ -109,6 +140,8 @@ c_text.selectAll("text")
 })
 .text(function(d){return d["text"];});
 
+ChangeNum(chart3);
+
 d3.select("#chart1").on("click",function (){
   arcAnime(chart1, 0);
   if(text[0]["p"]==1){
@@ -116,6 +149,7 @@ d3.select("#chart1").on("click",function (){
   } else if(text[0]["p"]==2) {
     cycleLeft("#chart1");
   }
+  ChangeNum(chart1);
 } , false);
 d3.select("#chart2").on("click",function (){
   arcAnime(chart2, 1);
@@ -124,6 +158,7 @@ d3.select("#chart2").on("click",function (){
   } else if(text[1]["p"]==2) {
     cycleLeft("#chart2");
   }
+  ChangeNum(chart2);
 } , false);
 d3.select("#chart3").on("click",function (){
   arcAnime(chart3, 2);
@@ -132,6 +167,7 @@ d3.select("#chart3").on("click",function (){
   } else if(text[2]["p"]==2) {
     cycleLeft("#chart3");
   }
+  ChangeNum(chart3);
 } , false);
 
 
@@ -170,7 +206,7 @@ function cycleRight(type){
   .ease("elastic", 1, 0.8)
   .attr({
     "x": 0,
-    "y": -30,
+    "y": -40,
     "font-size": 40,
     "fill": "rgba(0,0,0,1)"
   });
@@ -182,7 +218,7 @@ function cycleRight(type){
     .ease("elastic", 1, 0.8)
     .attr({
       "x": -50,
-      "y": 30,
+      "y": -5,
       "font-size": 20,
       "fill": "rgba(0,0,0,0.5)"
     });
@@ -193,7 +229,7 @@ function cycleRight(type){
     .ease("elastic", 1, 0.8)
     .attr({
       "x": 50,
-      "y": 30,
+      "y": -5,
       "font-size": 20,
       "fill": "rgba(0,0,0,0.5)"
     });
@@ -207,7 +243,7 @@ function cycleRight(type){
     .ease("elastic", 1, 0.8)
     .attr({
       "x": -50,
-      "y": 30,
+      "y": -5,
       "font-size": 20,
       "fill": "rgba(0,0,0,0.5)"
     });
@@ -218,7 +254,7 @@ function cycleRight(type){
     .ease("elastic", 1, 0.8)
     .attr({
       "x": 50,
-      "y": 30,
+      "y": -5,
       "font-size": 20,
       "fill": "rgba(0,0,0,0.5)"
     });
@@ -232,7 +268,7 @@ function cycleRight(type){
     .ease("elastic", 1, 0.8)
     .attr({
       "x": -50,
-      "y": 30,
+      "y": -5,
       "font-size": 20,
       "fill": "rgba(0,0,0,0.5)"
     });
@@ -243,7 +279,7 @@ function cycleRight(type){
     .ease("elastic", 1, 0.8)
     .attr({
       "x": 50,
-      "y": 30,
+      "y": -5,
       "font-size": 20,
       "fill": "rgba(0,0,0,0.5)"
     });
@@ -261,7 +297,7 @@ function cycleLeft(type){
   .ease("elastic", 1, 0.8)
   .attr({
     "x": 0,
-    "y": -30,
+    "y": -40,
     "font-size": 40,
     "fill": "rgba(0,0,0,1)"
   });
@@ -273,7 +309,7 @@ function cycleLeft(type){
     .ease("elastic", 1, 0.8)
     .attr({
       "x": -50,
-      "y": 30,
+      "y": -5,
       "font-size": 20,
       "fill": "rgba(0,0,0,0.5)"
     });
@@ -284,7 +320,7 @@ function cycleLeft(type){
     .ease("elastic", 1, 0.8)
     .attr({
       "x": 50,
-      "y": 30,
+      "y": -5,
       "font-size": 20,
       "fill": "rgba(0,0,0,0.5)"
     });
@@ -298,7 +334,7 @@ function cycleLeft(type){
     .ease("elastic", 1, 0.8)
     .attr({
       "x": -50,
-      "y": 30,
+      "y": -5,
       "font-size": 20,
       "fill": "rgba(0,0,0,0.5)"
     });
@@ -309,7 +345,7 @@ function cycleLeft(type){
     .ease("elastic", 1, 0.8)
     .attr({
       "x": 50,
-      "y": 30,
+      "y": -5,
       "font-size": 20,
       "fill": "rgba(0,0,0,0.5)"
     });
@@ -323,7 +359,7 @@ function cycleLeft(type){
     .ease("elastic", 1, 0.8)
     .attr({
       "x": -50,
-      "y": 30,
+      "y": -5,
       "font-size": 20,
       "fill": "rgba(0,0,0,0.5)"
     });
@@ -334,7 +370,7 @@ function cycleLeft(type){
     .ease("elastic", 1, 0.8)
     .attr({
       "x": 50,
-      "y": 30,
+      "y": -5,
       "font-size": 20,
       "fill": "rgba(0,0,0,0.5)"
     });
@@ -344,6 +380,14 @@ function cycleLeft(type){
   }
 }
 
+function ChangeNum(chart) {
+  d3.select("#Yes")
+  .text("Yes: " + chart[0] + "人");
+  d3.select("#No")
+  .text("No: " + chart[1] + "人");
+  d3.select("#sum")
+  .text("合計: " + (chart[0]+chart[1]) + "人");
+}
 
 function arcAnime(newdata, flag) {
   svg.selectAll("path")
