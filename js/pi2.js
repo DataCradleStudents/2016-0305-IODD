@@ -1,7 +1,18 @@
 
-var chart1 = [3,15];
-var chart2 = [13,5];
-var chart3 = [16, 20];
+var chart1 = [6,12];
+var chart2 = [14,4];
+var chart3 = [20, 16];
+
+// 県内データ
+var man = [4, 4];
+var woman = [6, 0];
+var all = [10, 4];
+// 県外データ
+var n_man = [2, 8];
+var n_woman = [8, 4];
+var n_all = [10, 12]
+
+
 
 var text = [{"text":"男性", "p":1, "id":"chart1"}, {"text":"女性", "p":2, "id":"chart2"}, {"text":"全体", "p":0, "id":"chart3"}];
 
@@ -17,12 +28,14 @@ var outerRadius = radius - 10;
 var innerRadius = radius - 170;
 
 var color = d3.scale.linear()
-.domain([0,d3.map(chart1).size()-1])
+.domain([0,d3.map(man).size()-1])
 .range(["#007bbb","#b94047"]);
 
 var pie = d3.layout.pie().value(function(d) {
   return d;
 }).sort(null);
+
+
 
 var a_scale = d3.scale.linear()
 .domain([0, d3.sum(chart3)])
@@ -33,6 +46,27 @@ var m_scale = d3.scale.linear()
 var w_scale = d3.scale.linear()
 .domain([0, d3.sum(chart2)])
 .rangeRound([0, 100]);
+// 県内用スケール
+var y_a_scale = d3.scale.linear()
+.domain([0, d3.sum(all)])
+.rangeRound([0, 100]);
+var y_m_scale = d3.scale.linear()
+.domain([0, d3.sum(man)])
+.rangeRound([0, 100]);
+var y_w_scale = d3.scale.linear()
+.domain([0, d3.sum(woman)])
+.rangeRound([0, 100]);
+// 県外用スケール
+var n_a_scale = d3.scale.linear()
+.domain([0, d3.sum(n_all)])
+.rangeRound([0, 100]);
+var n_m_scale = d3.scale.linear()
+.domain([0, d3.sum(n_man)])
+.rangeRound([0, 100]);
+var n_w_scale = d3.scale.linear()
+.domain([0, d3.sum(n_woman)])
+.rangeRound([0, 100]);
+
 
 var arc = d3.svg.arc().innerRadius(innerRadius).outerRadius(outerRadius);
 
@@ -142,32 +176,241 @@ c_text.selectAll("text")
 
 ChangeNum(chart3);
 
+var c_frag = [0, 0];
+var c_data = svg.append("g")
+.attr({
+  "id": "c_data",
+  "transform": "translate(0, 600)"
+})
+
+c_data.append("text")
+.on("mouseover", function() {
+  if(c_frag[0] == 0){
+    d3.select(this)
+    .transition()
+    .duration(150)
+    .attr({
+      "font-size":40,
+      "fill":"rgba(0,0,0,1)"
+    });
+  }
+})
+.on("mouseout", function() {
+  if(c_frag[0] == 0){
+    d3.select(this)
+    .transition()
+    .duration(150)
+    .attr({
+      "font-size":30,
+      "fill":"rgba(0,0,0,0.5)"
+    });
+  }
+})
+.on("click", function() {
+  if(c_frag[0] == 0){
+    if(c_frag[1] == 1){
+      c_frag[1] = 0;
+      d3.select("#gai")
+      .transition()
+      .duration(150)
+      .attr({
+        "font-size":30,
+        "fill":"rgba(0,0,0,0.5)"
+      });
+    }
+    d3.select(this)
+    .transition()
+    .duration(150)
+    .attr({
+      "font-size":40,
+      "fill":"rgba(0,0,0,1)"
+    });
+
+    c_frag[0] = 1;
+    if(text[0]["p"]==0){
+      arcAnime(man,0);
+      ChangeNum(man);
+    }else if(text[1]["p"]==0){
+      arcAnime(woman,1);
+      ChangeNum(woman);
+    }else{
+      arcAnime(all,2);
+      ChangeNum(all);
+    }
+  }else{
+    c_frag[0] = 0;
+    d3.select(this)
+    .transition()
+    .duration(150)
+    .attr({
+      "font-size":30,
+      "fill":"rgba(0,0,0,0.5)"
+    });
+    if(text[0]["p"]==0){
+      arcAnime(chart1,0);
+      ChangeNum(chart1);
+    }else if(text[1]["p"]==0){
+      arcAnime(chart2,1);
+      ChangeNum(chart2);
+    }else{
+      arcAnime(chart3,2);
+      ChangeNum(chart3);
+    }
+  }
+})
+.attr({
+  "id":"nai",
+  "x":50,
+  "y":-40,
+  "text-anchor": "middle",
+  "font-size":30,
+  "fill": "rgba(0,0,0,0.5)"
+})
+.style("cursor","pointer")
+.text("県内");
+
+c_data.append("text")
+.on("mouseover", function() {
+  if(c_frag[1] == 0){
+    d3.select(this)
+    .transition()
+    .duration(150)
+    .attr({
+      "font-size":40,
+      "fill":"rgba(0,0,0,1)"
+    });
+  }
+})
+.on("mouseout", function() {
+  if(c_frag[1] == 0){
+    d3.select(this)
+    .transition()
+    .duration(150)
+    .attr({
+      "font-size":30,
+      "fill":"rgba(0,0,0,0.5)"
+    });
+  }
+})
+.on("click", function() {
+  if(c_frag[1] == 0){
+    if(c_frag[0] == 1){
+      c_frag[0] = 0;
+      d3.select("#nai")
+      .transition()
+      .duration(150)
+      .attr({
+        "font-size":30,
+        "fill":"rgba(0,0,0,0.5)"
+      });
+    }
+    d3.select(this)
+    .transition()
+    .duration(150)
+    .attr({
+      "font-size":40,
+      "fill":"rgba(0,0,0,1)"
+    });
+
+    c_frag[1] = 1;
+    if(text[0]["p"]==0){
+      arcAnime(n_man,0);
+      ChangeNum(n_man);
+    }else if(text[1]["p"]==0){
+      arcAnime(n_woman,1);
+      ChangeNum(n_woman);
+    }else{
+      arcAnime(n_all,2);
+      ChangeNum(n_all);
+    }
+  }else{
+    c_frag[1] = 0;
+    d3.select(this)
+    .transition()
+    .duration(150)
+    .attr({
+      "font-size":30,
+      "fill":"rgba(0,0,0,0.5)"
+    });
+    if(text[0]["p"]==0){
+      arcAnime(chart1,0);
+      ChangeNum(chart1);
+    }else if(text[1]["p"]==0){
+      arcAnime(chart2,1);
+      ChangeNum(chart2);
+    }else{
+      arcAnime(chart3,2);
+      ChangeNum(chart3);
+    }
+  }
+})
+.attr({
+  "id":"gai",
+  "x":50,
+  "y":-0,
+  "text-anchor": "middle",
+  "font-size":30,
+  "fill": "rgba(0,0,0,0.5)"
+})
+.style("cursor","pointer")
+.text("県外");
+
+
+
+
 d3.select("#chart1").on("click",function (){
-  arcAnime(chart1, 0);
+  if(c_frag[0] == 1){
+    arcAnime(man, 0);
+    ChangeNum(man);
+  } else if(c_frag[1] == 1){
+    arcAnime(n_man, 0);
+    ChangeNum(n_man);
+  } else {
+    arcAnime(chart1, 0);
+    ChangeNum(chart1);
+  }
+
   if(text[0]["p"]==1){
     cycleRight("#chart1");
   } else if(text[0]["p"]==2) {
     cycleLeft("#chart1");
   }
-  ChangeNum(chart1);
 } , false);
 d3.select("#chart2").on("click",function (){
-  arcAnime(chart2, 1);
+  if(c_frag[0] == 1){
+    arcAnime(woman, 1);
+    ChangeNum(woman);
+  } else if(c_frag[1] == 1){
+    arcAnime(n_woman, 1);
+    ChangeNum(n_woman);
+  } else {
+    arcAnime(chart2, 1);
+    ChangeNum(chart2);
+  }
+
   if(text[1]["p"]==1){
     cycleRight("#chart2");
   } else if(text[1]["p"]==2) {
     cycleLeft("#chart2");
   }
-  ChangeNum(chart2);
 } , false);
 d3.select("#chart3").on("click",function (){
-  arcAnime(chart3, 2);
+  if(c_frag[0] == 1){
+    arcAnime(all, 2);
+    ChangeNum(all);
+  } else if(c_frag[1] == 1){
+    arcAnime(n_all, 2);
+    ChangeNum(n_all);
+  } else {
+    arcAnime(chart3, 2);
+    ChangeNum(chart3);
+  }
+
   if(text[2]["p"]==1){
     cycleRight("#chart3");
   } else if(text[2]["p"]==2) {
     cycleLeft("#chart3");
   }
-  ChangeNum(chart3);
 } , false);
 
 
@@ -408,12 +651,31 @@ function arcAnime(newdata, flag) {
   svg.selectAll("text")
   .data(pie(newdata))
   .text(function(d) {
-    if(flag == 0) {
-      return m_scale(d.data) + "%";
-    } else if(flag == 1) {
-      return w_scale(d.data) + "%";
+    if(d.data == 0){
+      return "";
     }
-    return a_scale(d.data) + "%";
+    if(c_frag[0] == 1){
+      if(flag == 0) {
+        return y_m_scale(d.data) + "%";
+      } else if(flag == 1) {
+        return y_w_scale(d.data) + "%";
+      }
+      return y_a_scale(d.data) + "%";
+    }else if(c_frag[1] == 1){
+      if(flag == 0) {
+        return n_m_scale(d.data) + "%";
+      } else if(flag == 1) {
+        return n_w_scale(d.data) + "%";
+      }
+      return n_a_scale(d.data) + "%";
+    }else{
+      if(flag == 0) {
+        return m_scale(d.data) + "%";
+      } else if(flag == 1) {
+        return w_scale(d.data) + "%";
+      }
+      return a_scale(d.data) + "%";
+    }
   })
   .transition()
   .duration(1000)
