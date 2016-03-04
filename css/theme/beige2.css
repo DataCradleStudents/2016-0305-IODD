@@ -10,13 +10,13 @@
  *********************************************/
 body {
   background: #f7f2d3;
-  background: -moz-radial-gradient(center, circle cover, white 0%, rgb(50,176,255) 100%);
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, white), color-stop(100%, rgb(50,176,255)));
-  background: -webkit-radial-gradient(center, circle cover, white 0%, rgb(50,176,255) 100%);
-  background: -o-radial-gradient(center, circle cover, white 0%, rgb(50,176,255) 100%);
-  background: -ms-radial-gradient(center, circle cover, white 0%, rgb(50,176,255) 100%);
-  background: radial-gradient(center, circle cover, white 0%, rgb(50,176,255) 100%);
-  background-color: rgb(50,176,255); }
+  background: -moz-radial-gradient(center, circle cover, rgb(200,230,255) 0%, rgb(50,100,255) 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgb(200,230,255)), color-stop(100%, rgb(50,100,255)));
+  background: -webkit-radial-gradient(center, circle cover, rgb(200,230,255) 0%, rgb(50,100,255) 100%);
+  background: -o-radial-gradient(center, circle cover, rgb(200,230,255) 0%, rgb(50,100,255) 100%);
+  background: -ms-radial-gradient(center, circle cover, rgb(200,230,255) 0%, rgb(50,100,255) 100%);
+  background: radial-gradient(center, circle cover, rgb(200,230,255) 0%, rgb(50,100,255) 100%);
+  background-color: rgb(50,100,255); }
 
 .reveal {
   font-family: "Lato", sans-serif;
